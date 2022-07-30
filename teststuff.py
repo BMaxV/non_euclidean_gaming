@@ -13,12 +13,10 @@ def test():
     
     ang1=vector.angle_v1v2(v1,v2)
     ang2=vector.angle_v1v2(v2,v1)
-    print(ang1,ang2)
     
     ang1=vector.get_radians_from_vector(v1.x,v1.y)
     ang2=vector.get_radians_from_vector(v2.x,v2.y)
     ang3=vector.get_radians_from_vector(v3.x,v3.y)
-    print(ang1,ang2,ang3)
     
     xs=[]
     ys1=[]
@@ -35,7 +33,6 @@ def test():
         my_v2=vector.Vector(x2,y2,0)
         angx=vector.get_radians_from_vector(my_v.x,my_v.y)
         angx2=vector.get_radians_from_vector(my_v2.x,my_v2.y)
-        #print(round(c,3),round(angx/math.pi,3),round(angx2/math.pi,3))
         xs.append(c)
         ys1.append(math.cos(c*math.pi))
         
@@ -57,8 +54,6 @@ def test():
         # second rotation. alternatively, we can add something 
         # and shift the curve up a bit.
         
-        
-        
         my_val=math.sin((c/2)*math.pi-math.pi*0.5)
         my_val=my_val/2 +0.5 # make amplitude smaller and shift everything up.
         ys3.append(my_val) 
@@ -74,6 +69,7 @@ def test():
         c+=0.1
     
     return xs, ys1,ys2,ys3
+    
 def render_demo(xs, ys1,ys2,ys3):
     from geom import geom
     
@@ -105,8 +101,6 @@ def render_demo(xs, ys1,ys2,ys3):
         fl.append(x.as_svg())
     geom.main_svg(fl,"demo.svg",view_box_d=view_box_d)
     
-    
-
 if __name__=="__main__":
     l=test()
     if False:

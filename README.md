@@ -1,4 +1,4 @@
-# non euclidean panda
+# non euclidean game stuff
 
 So, some relatively famous games, like anti chamber, have played
 with the idea of non euclidean space. Meaning, they show the player
@@ -34,5 +34,15 @@ that is "valid" in 3d space, but also continously changes another variable
 on from one definite state to another definite state.
 
 # math
+
+So you have a value of your normal rotation of your character in grey,
+you have curve that's the absolute value of a longer frequency
+curve in black
+and you have a shifted curve with a medium frequncy in green.
+
+The idea is that whatever "spooky" thing you want to happen,
+should only happen when the black or green curve are above the
+red line. Because that's only the case on every *second* peak
+of the regular rotation curve.
 
 ![picture](demo.svg)
