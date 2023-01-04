@@ -36,13 +36,37 @@ on from one definite state to another definite state.
 # math
 
 So you have a value of your normal rotation of your character in grey,
-you have curve that's the absolute value of a longer frequency
-curve in black
-and you have a shifted curve with a medium frequncy in green.
+and you have a "non euclidean" curve in green.
 
 The idea is that whatever "spooky" thing you want to happen,
-should only happen when the black or green curve are above the
-red line. Because that's only the case on every *second* peak
-of the regular rotation curve.
+should only happen when the green curve is above a certain value.
+
+Like 0, which will be the case for the first rotation, but NOT the second,
+but then again the third.
+
+More complicated setups require more math, but work the same way.
+
+Like taking into account the angular position of a camera relative to an object.
 
 ![picture](demo.svg)
+
+# ralph demo
+
+I've taken the roaming ralph demo from panda3d and modified it. The parts
+that are like the original code are under pandas license
+
+https://github.com/panda3d/panda3d/blob/master/LICENSE
+
+https://github.com/panda3d/panda3d/
+https://github.com/panda3d/panda3d/tree/master/samples/roaming-ralph
+
+But I added three functions:
+
+ * one function to initialize a new object and a non_euclidean task
+ * the non euclidean task to check the rotation and turn a demonstration object "on" or "off"
+ * one function to help calculate angular positions
+ 
+These functions as well as the gltf demonstration object, which are mine, are licensed as MIT.
+
+If you rotate ralph, the demonstration object will disappear on every
+second rotation.

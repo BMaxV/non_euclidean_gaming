@@ -24,21 +24,23 @@ def test():
     ys3=[]
     
     c=0
-    while c < 8:
-        x=math.cos(c*math.pi)
-        y=math.sin(c*math.pi)
-        x2=math.cos(c/2*math.pi)
-        y2=math.sin(c/2*math.pi)
-        my_v=vector.Vector(x,y,0)
-        my_v2=vector.Vector(x2,y2,0)
-        angx=vector.get_radians_from_vector(my_v.x,my_v.y)
-        angx2=vector.get_radians_from_vector(my_v2.x,my_v2.y)
+    while c < math.pi*4:
+        if False:
+            x=math.cos(c*math.pi)
+            y=math.sin(c*math.pi)
+            x2=math.cos(c/2*math.pi)
+            y2=math.sin(c/2*math.pi)
+            my_v=vector.Vector(x,y,0)
+            my_v2=vector.Vector(x2,y2,0)
+            angx=vector.get_radians_from_vector(my_v.x,my_v.y)
+            angx2=vector.get_radians_from_vector(my_v2.x,my_v2.y)
+            
         xs.append(c)
-        ys1.append(math.cos(c*math.pi))
+        ys1.append(math.sin(c))
         
-        my_val=math.sin(c/4*math.pi)# < --- magic
+        my_val=math.sin(c/2)# < --- magic
         my_val=abs(my_val) # <--- comment...
-        ys2.append(my_val) 
+        ys2.append(0)#my_val) 
         
         # dividing the counter by 4 makes the period longer
         # doing sin instead of cos, means it will start at 0
@@ -54,8 +56,8 @@ def test():
         # second rotation. alternatively, we can add something 
         # and shift the curve up a bit.
         
-        my_val=math.sin((c/2)*math.pi-math.pi*0.5)
-        my_val=my_val/2 +0.5 # make amplitude smaller and shift everything up.
+        my_val=math.sin((c/2))
+        #my_val=my_val/2 # make amplitude smaller and shift everything up.
         ys3.append(my_val) 
         
         # but as can be seen form the peaks, the difference is very small.
@@ -103,5 +105,5 @@ def render_demo(xs, ys1,ys2,ys3):
     
 if __name__=="__main__":
     l=test()
-    if False:
+    if True:
         render_demo(*l)
